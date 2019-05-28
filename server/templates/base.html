@@ -1,0 +1,15 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Thopter Foundry</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1>Thopter Foundry</h1>
+
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% block content %}
+    Pretty things here I guess?
+  {% endblock %}
+</section>
