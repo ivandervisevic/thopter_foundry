@@ -11,7 +11,7 @@ A quick and dirty start towards a visual deckbuilder for mtg
  * run scripts/import_data.py to populate the es. this will take a couple of minutes.
 
 ## Flask setup
- * simplest way to get constant updates is to set up a small script that will define env variables: 
-export FLASK_APP=<path_to_repo>/server
-export FLASK_ENV=development
-flask run
+ * simplest way to get constant updates is to set up a small script that will define env variables:  
+export FLASK_APP=<path_to_repo>/server  
+export FLASK_ENV=development  
+flask run  

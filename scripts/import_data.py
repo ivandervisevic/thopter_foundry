@@ -10,7 +10,7 @@ def main():
 	update = False
 
 	parser = ConfigParser()
-	parser.read('import_config.ini')
+	parser.read('../import_config.ini')
 	es_url = parser.get('SETTINGS', 'url')
 	# TODO: make sure to change the import_config.ini value to where your file is actually kept. Absolute path should work best
 

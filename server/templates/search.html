@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block app_content %}
+	<h1>Find me some cards</h1>
+	<div class="row">
+        <div class="col-md-4">
+            {{ wtf.quick_form(form, method='get') }}
+        </div>
+    </div>
+    {% if data %}
+    	<h4>I found some cards!</h4>
+    	{% for card in data %}
+			<div>
+				{{ card['name'] }} - {{ card['type_line'] }} - {{ card['mana_cost'] }}
+			</div>
+		{% endfor %}
+    {% endif %}
+{% endblock %}

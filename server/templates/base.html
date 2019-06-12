@@ -1,15 +1,26 @@
-<!doctype html>
-<title>{% block title %}{% endblock %} - Thopter Foundry</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<nav>
-  <h1>Thopter Foundry</h1>
+{% extends "bootstrap/base.html" %}
 
-</nav>
-<section class="content">
-  <header>
-    {% block header %}{% endblock %}
-  </header>
-  {% block content %}
-    Pretty things here I guess?
-  {% endblock %}
-</section>
+{% block title %}
+    Thopter Foundry
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default">
+        ... navigation bar here ...
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        {# application content needs to be provided in the app_content block #}
+        {% block app_content %}{% endblock %}
+    </div>
+{% endblock %}

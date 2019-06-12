@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+	<h1>Unnamed deck imported from arena</h1>
+	<h3>{{ deck.name }}</h3>
+	{% for keys in deck.mainboard|batch(5) %}
+		<div>
+			{% for key in keys %}
+			<img src={{ deck.mainboard[key]['image_uris']['small'] }} />
+			{% endfor %}
+		</div>
+	{% endfor %}
+	<h3>Sideboard</h3>
+		{% for key in deck.sideboard %}
+		<div>{{ deck.sideboard[key]['count'] }}  {{ deck.sideboard[key]['name'] }}    {{ deck.sideboard[key]['mana_cost'] }}</div>
+	{% endfor %}
+{% endblock %}
